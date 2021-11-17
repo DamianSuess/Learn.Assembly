@@ -16,3 +16,12 @@
 ;   * Average percentage (whole number) that the player
 ;     wins an individual games of craps.
 ;
+
+format PE GUI 4.0
+entry start
+
+section '.data' data readable writeable
+_welcome db 'Number of games to be played: ',0
+_output  db 'Average % of wins: ',0
+
+section '.text' code readable executable
