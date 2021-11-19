@@ -17,11 +17,32 @@
 ;     wins an individual games of craps.
 ;
 
-format PE GUI 4.0
+;format PE GUI 4.0
+format PE console
 entry start
 
-section '.data' data readable writeable
-_welcome db 'Number of games to be played: ',0
-_output  db 'Average % of wins: ',0
+include 'WIN32A.INC'
+
 
 section '.text' code readable executable
+start:
+        push _welcome
+        call [printf]
+        pop ecx
+
+        call [scanf]
+
+        push 0
+        call [ExitProcess]
+
+section '.rdata' data readable writeable
+
+_welcome db 'Lets play a game of Craps!', 10, 0
+_inputMsg db 'Number of games to be played: ', 0
+_output  db 'Average % of wins: ', 0
+
+section '.idata' data readable import
+        library kernel32, 'kernel32.dll', \
+                msvcrt,   'msvcrt.dll'
+        import kernel32, ExitProcess, 'ExitProcess'
+        import msvcrt, printf, 'printf', scanf, 'scanf'
