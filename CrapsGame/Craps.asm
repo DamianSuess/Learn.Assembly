@@ -35,14 +35,23 @@ start:
         push 0
         call [ExitProcess]
 
+RollDice:
+        push ecx edx
+
+
 section '.rdata' data readable writeable
 
-_welcome db 'Lets play a game of Craps!', 10, 0
-_inputMsg db 'Number of games to be played: ', 0
-_output  db 'Average % of wins: ', 0
+  _welcome db 'Lets play a game of Craps!', 10, 0
+  _inputMsg db 'Number of games to be played: ', 0
+  _output  db 'Average % of wins: ', 0
 
 section '.idata' data readable import
-        library kernel32, 'kernel32.dll', \
-                msvcrt,   'msvcrt.dll'
-        import kernel32, ExitProcess, 'ExitProcess'
-        import msvcrt, printf, 'printf', scanf, 'scanf'
+  library kernel32, 'kernel32.dll', \
+          msvcrt,   'msvcrt.dll'
+
+  import kernel32, \
+         ExitProcess, 'ExitProcess'
+
+  import msvcrt, \
+         printf, 'printf', \
+         scanf, 'scanf'

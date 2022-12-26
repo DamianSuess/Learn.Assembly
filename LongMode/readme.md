@@ -1,4 +1,4 @@
-Entering long mode - simple examples
+# Entering Long Mode - Simple Examples
 by Tomasz Grysztar
 
 While playing with the 64-bit machine I wrote some samples that may be the simplest available examples of entering the long mode. The file SIMPLE.ASM contains the smallest one, which enters long mode without re-enabling interrupts and thus saves on setting up the IDT. The BASECODE.ASM contains the extended version of this sample, which sets up the interrupts and alters two characters on the screen according to the clock and keyboard events, to show that everything's working (and reboots on the Esc key).
