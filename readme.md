@@ -14,3 +14,8 @@ Understanding bare-bones no only helps you understand what's going on under the 
 
 * FASM
 * [What is FASM](https://winasm.org/what-is-fasm.html)
+
+### x64dbg
+
+* https://www.codementor.io/@packt/reverse-engineering-with-fasm-and-x64dbg-rqae47yjz
+* https://github.com/f2065/xFasImport
