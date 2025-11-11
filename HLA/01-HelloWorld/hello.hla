@@ -1,0 +1,10 @@
+program hello;
+
+#includeonce( "stdlib.hhf" )
+#includeonce( "hide/hidelib.hhf" )
+?@nodisplay := true;
+?@noalignstack := true;
+
+begin hello;
+  stdout.put("Hello world! from HLA", nl);
+end hello;
