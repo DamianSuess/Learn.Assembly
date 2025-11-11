@@ -36,17 +36,17 @@ _msgcap  db 'Command line parameters',0
 _hheap   dd ?
 
 data import
- library kernel,'KERNEL32.DLL',\
-         user,'USER32.DLL'
+  library kernel,'KERNEL32.DLL',\
+          user,'USER32.DLL'
 
- import kernel,\
+  import kernel,\
          GetCommandLine,'GetCommandLineA',\
          GetProcessHeap,'GetProcessHeap',\
          HeapAlloc,'HeapAlloc',\
          HeapFree,'HeapFree',\
          ExitProcess,'ExitProcess'
 
- import user,\
+  import user,\
         MessageBox,'MessageBoxA',\
         wsprintf,'wsprintfA'
 end data
